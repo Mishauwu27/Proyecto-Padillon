@@ -1,37 +1,39 @@
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title> Tienda </title>
-</head>
-<body>
-    <header>
-        <div class="logo.container">
-            <img src="logo.png" alt="Logo" class="logo">
-            <span class="page-name">Page Name</span>
-        </div>
-        <nav class="nav-links">
-            <a href="store.html"> Tienda </a>
-            <a href="about.html"> Acerca De </a>
-            <a href="support.html"> Soporte </a>
-        </nav>
-        <div class="account">
-            <a href="login.html" id="login-link"> Iniciar Sesión </a>
-        </div>
-    </header>
-    <main>
-        <h2> sexo </h2>
-    </main>
-    <script>
-        const currentPath = window.location.pathname.split('/').pop();
-        const links = document.querySelectorAll('.nav-links a');
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title> Tienda </title>
+    </head>
+    <body>
+        <header>
+            <div class="logo.container">
+                <img src="logo.png" alt="Logo" class="logo">
+                <span class="page-name"> Steam Rojo </span>
+            </div>
+            <nav class="nav-links">
+                <a href="store.html"> Tienda </a>
+                <a href="about.html"> Acerca De </a>
+                <a href="support.html"> Soporte </a>
+            </nav>
+            <div class="account">
+                <a href="login.html" id="login-link"> Iniciar Sesión </a>
+            </div>
+        </header>
+        <main>
+            <div>
+                <p> placeholder </p>
+            </div>
+        </main>
+        <script>
+            const currentPath = window.location.pathname.split('/').pop();
+            const links = document.querySelectorAll('.nav-links a');
 
-        links.forEach(link => {
-            if (link.getAttribute('href') === currentPath) {
-                link.classList.add('active');
-            }
-        });
-    </script>
-</body>
+            links.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        </script>
+    </body>
 </html>
