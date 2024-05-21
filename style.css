@@ -165,3 +165,21 @@ main {
     margin: 15px;
     width: 70%;
 }
+
+.support-thingy {
+    display: flex;
+    margin-top: 150px;
+    width: 60%;
+}
+
+.left-side-thingy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.support-sorry {
+    font-size: 28px;
+    margin-top: 10px;
+    text-align: center;
+}
