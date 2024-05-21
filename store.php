@@ -31,7 +31,7 @@ session_start();
         </header>
         <main>
             <div>
-                <p>placeholder</p>
+                <p> placeholder </p>
             </div>
         </main>
         <script>
