@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <html lang="es">
     <head>
         <meta charset="UTF-8">
@@ -12,12 +16,17 @@
                 <h2 class="page-name"> Steam Rojo </h2>
             </div>
             <nav class="nav-links">
-                <a href="store.html"> Tienda </a>
-                <a href="about.html"> Acerca De </a>
-                <a href="support.html"> Soporte </a>
+                <a href="store.php"> Tienda </a>
+                <a href="about.php"> Acerca De </a>
+                <a href="support.php"> Soporte </a>
             </nav>
             <div class="account">
-                <a href="login.html" id="login-link"> Iniciar Sesión </a>
+                <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+                    <a href="account.html" id="account-link"> Mi Cuenta </a>
+                    <a href="logout.php" id="logout-link"> Cerrar Sesión </a>
+                <?php else: ?>
+                    <a href="login.html" id="login-link"> Iniciar Sesión </a>
+                <?php endif; ?>
             </div>
         </header>
         <main>
