@@ -47,7 +47,7 @@ session_start();
             <div class="about-glow">
                 <h1> Juegos alucinantes* en una sola página </h1>
                 <p class="about-fact"> Más de 5 juegos para todo los gustos y un buen de <br> ofertas, Steam Rojo solo ofrece lo mejor. </p>
-                <a href="store.html" class="about-link"> Echar un vistazo </a>
+                <a href="store.php" class="about-link"> Echar un vistazo </a>
             </div>
             <div class="about-message">
                 <p class="about-thanks"> Todas las compras que usted haga en Steam Rojo nos <br> ayudan a asegurar un mejor futuro en el hipotético caso <br> de que no aprobemos la materia. <br> Incluso cuando realmente no le cobramos nada, el hecho <br> de que este utilizando esta página significa mucho. </p>
