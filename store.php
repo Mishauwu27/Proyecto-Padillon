@@ -30,8 +30,28 @@ session_start();
             </div>
         </header>
         <main>
-            <div>
-                <p> placeholder </p>
+            <div class="store-container">
+                <section class="store-product">
+                    <h2> Hollow Knight: Silksong </h2>
+                </section>
+                <section class="store-product">
+                    <h2> Jailo: Di Master Chif Colektion </h2>
+                </section>
+                <section class="store-product">
+                    <h2> Asasins Crid </h2>
+                </section>
+                <section class="store-product">
+                    <h2> Kopjed </h2>
+                </section>
+                <section class="store-product">
+                    <h2> Estardiu Bali </h2>
+                </section>
+                <section class="store-product">
+                    <h2> Portal 3 </h2>
+                </section>
+            </div>
+            <div class="store-message">
+                <p class="store-thanks"> Estamos trabajando duro para traerle todos estos asombrosos juegos y más tan pronto como sea posible! Gracias por usar Steam Rojo! </p>
             </div>
         </main>
         <script>

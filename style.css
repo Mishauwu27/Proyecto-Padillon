@@ -74,6 +74,44 @@ main {
     color: pink;
 }
 
+.store-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.store-product {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: black;
+    padding: 20px;
+}
+
+.store-message {
+    align-items: center;
+    background-color: #190b0f;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding-bottom: 20x;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.store-thanks {
+    display: flex;
+    font-size: 28px;
+    justify-content: center;
+    margin: 27px;
+    text-align: center;
+    width: 80%;
+}
+
 .about-intro {
     display: flex;
     margin-top: 150px;
