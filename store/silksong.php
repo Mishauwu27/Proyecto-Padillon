@@ -22,10 +22,10 @@ session_start();
             </nav>
             <div class="account">
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-                    <a href="account.html" id="account-link"> Mi Cuenta </a>
-                    <a href="logout.php" id="logout-link"> Cerrar Sesión </a>
+                    <a href="../account.html" id="account-link"> Mi Cuenta </a>
+                    <a href="../logout.php" id="logout-link"> Cerrar Sesión </a>
                 <?php else: ?>
-                    <a href="login.html" id="login-link"> Iniciar Sesión </a>
+                    <a href="../login.html" id="login-link"> Iniciar Sesión </a>
                 <?php endif; ?>
             </div>
         </header>

@@ -31,27 +31,30 @@ session_start();
         </header>
         <main>
             <div class="store-container">
-                <section class="store-product">
-                    <h2> Hollow Knight: Silksong </h2>
-                </section>
-                <section class="store-product">
-                    <h2> Jailo: Di Master Chif Colektion </h2>
-                </section>
-                <section class="store-product">
-                    <h2> Asasins Crid </h2>
-                </section>
-                <section class="store-product">
-                    <h2> Kopjed </h2>
-                </section>
-                <section class="store-product">
-                    <h2> Estardiu Bali </h2>
-                </section>
-                <section class="store-product">
-                    <h2> Portal 3 </h2>
-                </section>
-            </div>
-            <div class="store-message">
-                <p class="store-thanks"> Estamos trabajando duro para traerle todos estos asombrosos juegos y más tan pronto como sea posible! Gracias por usar Steam Rojo! </p>
+                <a href=store/silksong.php>
+                    <section class="store-product" style="background-image: url('assets/silksong.jpg');">
+                    </section>
+                </a>
+                <a href=store/jailo.php>
+                    <section class="store-product" style="background-image: url('assets/jailo.png');">
+                    </section>
+                </a>
+                <a href=store/asasins-crid.php>
+                    <section class="store-product" style="background-image: url('assets/asasins_crid.jpeg');">
+                    </section>
+                </a>
+                <a href=store/kopjed.php>
+                    <section class="store-product" style="background-image: url('assets/kopjed.jpeg');">
+                    </section>
+                </a>
+                <a href=store/estardiu-bali.php>
+                    <section class="store-product" style="background-image: url('assets/estardiu_bali.jpeg');">
+                    </section>
+                </a>
+                <a href=store/portal-iii.php>
+                    <section class="store-product" style="background-image: url('assets/portal_iii.jpg');">
+                    </section>
+                </a>
             </div>
         </main>
         <script>
