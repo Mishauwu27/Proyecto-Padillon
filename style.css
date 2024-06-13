@@ -102,17 +102,36 @@ main {
     background: rgba(0, 0, 0, 0.8);
     bottom: 0;
     content: "";
-    height: 100%;
     left: 0;
     position: absolute;
     right: 0;
-    text-align: center;
-    transition: height 0.5s ease, opacity 0.5s ease;
+    top: 0;
+    transition: opacity 0.5s ease, height 0.5s ease;
     z-index: 1;
 }
 
-.store-product:hover::before {
-    height: 0;
+.store-product .content {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.store-product .content .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.store-product .content .description {
+    font-size: 18px;
+}
+
+.store-product:hover::before,
+.store-product:hover .content {
     opacity: 0;
 }
 
