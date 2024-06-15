@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #231116;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #1f090f;
+    box-shadow: 0 2px 4px rgba(31, 9, 15, 0.5);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 35px;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-container {
+    align-items: center;
+    display: flex;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.page-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 27px;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: pink;
+}
+
+.nav-links a.active {
+    color: red;
+    text-decoration: underline;
+}
+
+.account {
+    align-items: center;
+    display: flex;
+}
+
+.account a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.account a:hover {
+    color: pink;
+}
+
+.store-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.store-product {
+    background-position: center;
+    background-size: cover;
+    border-radius: 12px;
+    color: white;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+.store-product:hover {
+    transform: scale(1.05);
+}
+
+.store-product::before {
+    background: rgba(0, 0, 0, 0.8);
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity 0.5s ease, height 0.5s ease;
+    z-index: 1;
+}
+
+.store-product .content {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.store-product .content .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.store-product .content .description {
+    font-size: 18px;
+}
+
+.store-product:hover::before,
+.store-product:hover .content {
+    opacity: 0;
+}
+
+.about-intro {
+    display: flex;
+    margin-top: 150px;
+    width: 60%;
+}
+
+.left-side-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.about-logo {
+    height: 70px;
+    margin-right: 15px;
+}
+
+.about-name {
+    font-size: 40px;
+}
+
+.about-description {
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+.right-side-intro{
+    display: flex;
+    justify-content: left;
+    width: 50%;
+}
+
+.about-image {
+    width: 500px;
+}
+
+.about-glow {
+    align-items: center;
+    background-image: radial-gradient(ellipse farthest-side, rgba(93, 19, 38, 0.5), transparent);
+    border-radius: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+    justify-content: center;
+    margin-top: 100px;
+    padding: 50px;
+    text-align: center;
+    width: 1000px;
+}
+
+.about-fact {
+    font-size: 24px;
+    margin-top: 15px;
+}
+
+.about-link {
+    color: red;
+    font-size: 24px;
+    margin-top: 12px;
+    text-decoration: none;
+}
+
+.about-message {
+    align-items: center;
+    background-color: #190b0f;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding-bottom: 20x;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.about-thanks {
+    display: flex;
+    font-size: 28px;
+    justify-content: right;
+    margin: 27px;
+    text-align: right;
+    width: 80%;
+}
+
+.about-clarification {
+    display: flex;
+    font-size: 12px;
+    justify-content: left;
+    margin: 15px;
+    width: 70%;
+}
+
+.support-thingy {
+    display: flex;
+    margin-top: 150px;
+    width: 60%;
+}
+
+.support-sorry {
+    display: flex;
+    flex-direction: column;
+    font-size: 28px;
+    justify-content: center;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.form-container{
+    background-color: #2a1316;
+    border-radius: 5px;
+    padding: 20px 40px;
+}
+
+.form-container h1{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-container a{
+    color: pink;
+    text-decoration: none;
+}
+
+.form-btn{
+    background: #4e3131;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 100%;
+    padding: 15px;
+    transition: .2s;
+    width: 100%;
+}
+
+.form-btn:focus{
+    outline: 0;
+    transition: .2s;
+}
+
+.form-btn:active{
+    transform: scale(0, 98);
+    transform: translateY(-2px);
+}
+
+.form-text{ margin-top: 30px }
+
+.form-control{
+    margin: 20px 0 40px;
+    position: relative;
+    width: 300px;
+}
+
+.form-control input{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    color: #89686f;
+    display: block;
+    font-size: 18px;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.form-control input:focus,
+.form-control input:valid{
+    border-bottom-color: pink;
+    outline: 0;
+}
+
+.form-control label{
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 15px;
+}
+
+.form-control label span{
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, 0.55, 0.265, 1.55);
+}
+
+.form-control input:focus+label span,
+.form-control input:valid+label span{
+    color: pink;
+    transform: translateY(-30px);
+}
+
+.slider ul {
+    display: flex;
+    animation: change 10s infinite alternate;
+  }
+  .slider li {
+    width: 100%;
+  }
+  @keyframes change {
+    0% { margin-left: 0; }
+    25% { margin-left: -100%; }
+    50% { margin-left: -200%; }
+    75% { margin-left: -300%; }
+  }
