@@ -20,14 +20,14 @@ session_start();
                 <a href="about.php"> Acerca De </a>
                 <a href="support.php"> Soporte </a>
             </nav>
-            <div class="account">
+            <nav class="nav-links">
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-                    <a href="account.html" id="account-link"> Mi Cuenta </a>
-                    <a href="logout.php" id="logout-link"> Cerrar Sesión </a>
+                    <a href="account.php"> Mi Cuenta </a>
+                    <a href="logout.php"> Cerrar Sesión </a>
                 <?php else: ?>
-                    <a href="login.html" id="login-link"> Iniciar Sesión </a>
+                    <a href="login.html"> Iniciar Sesión </a>
                 <?php endif; ?>
-            </div>
+            </nav>
         </header>
         <main>
             <div class="about-intro">
@@ -56,7 +56,7 @@ session_start();
         </main>
         <script>
             const currentPath = window.location.pathname.split('/').pop();
-            const links = document.querySelectorAll('.nav-links a');
+            const links = document.querySelectorAll('a');
 
             links.forEach(link => {
                 if (link.getAttribute('href') === currentPath) {

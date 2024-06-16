@@ -10,7 +10,7 @@ session_start();
         <title> Hollow Knight: Silksong </title>
     </head>
     <body>
-        <header>
+    <header>
             <div class="logo-container">
                 <img src="../logo.png" alt="Logo" class="logo">
                 <h2 class="page-name"> Steam Rojo </h2>
@@ -20,18 +20,21 @@ session_start();
                 <a href="../about.php"> Acerca De </a>
                 <a href="../support.php"> Soporte </a>
             </nav>
-            <div class="account">
+            <nav class="nav-links">
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-                    <a href="../account.html" id="account-link"> Mi Cuenta </a>
-                    <a href="../logout.php" id="logout-link"> Cerrar Sesión </a>
+                    <a href="../account.php"> Mi Cuenta </a>
+                    <a href="../logout.php"> Cerrar Sesión </a>
                 <?php else: ?>
-                    <a href="../login.html" id="login-link"> Iniciar Sesión </a>
+                    <a href="../login.html"> Iniciar Sesión </a>
                 <?php endif; ?>
-            </div>
+            </nav>
         </header>
         <main>
-            <div class="">
-                <p> hola </p>
+            <div class="game-info">
+                <div class="left-side-info">
+                </div>
+                <div class="right-side-info">
+                </div>
             </div>
         </main>
     </body>

@@ -59,21 +59,6 @@ main {
     text-decoration: underline;
 }
 
-.account {
-    align-items: center;
-    display: flex;
-}
-
-.account a {
-    color: white;
-    font-size: 18px;
-    text-decoration: none;
-}
-
-.account a:hover {
-    color: pink;
-}
-
 .store-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -162,7 +147,7 @@ main {
     margin-top: 10px;
 }
 
-.right-side-intro{
+.right-side-intro {
     display: flex;
     justify-content: left;
     width: 50%;

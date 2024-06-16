@@ -20,14 +20,14 @@ session_start();
                 <a href="about.php"> Acerca De </a>
                 <a href="support.php"> Soporte </a>
             </nav>
-            <div class="account">
+            <nav class="nav-links">
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-                    <a href="account.html" id="account-link"> Mi Cuenta </a>
-                    <a href="logout.php" id="logout-link"> Cerrar Sesión </a>
+                    <a href="account.php"> Mi Cuenta </a>
+                    <a href="logout.php"> Cerrar Sesión </a>
                 <?php else: ?>
-                    <a href="login.html" id="login-link"> Iniciar Sesión </a>
+                    <a href="login.html"> Iniciar Sesión </a>
                 <?php endif; ?>
-            </div>
+            </nav>
         </header>
         <main>
             <div class="store-container">
@@ -35,7 +35,7 @@ session_start();
                     <section class="store-product" style="background-image: url('assets/silksong.jpg');">
                         <div class="content">
                             <div class="title"> Hollow Knight: Silksong </div>
-                            <div class="description"> shaw </div>
+                            <div class="description"> shaw: el juego </div>
                         </div>
                     </section>
                 </a>
@@ -43,7 +43,7 @@ session_start();
                     <section class="store-product" style="background-image: url('assets/jailo.png');">
                         <div class="content">
                             <div class="title"> Jailo: Di Master Chif Colektion </div>
-                            <div class="description"> El emblemático viaje del Jefe Maestro incluye seis juegos creados para PC y recopilados en una sola experiencia. Ya seas un seguidor de toda la vida o descubras al Spartan 117 por primera vez, la colección Jefe Maestro te resultará la experiencia de juego definitiva de Halo. </div>
+                            <div class="description"> El emblemático viaje del Halo Verde incluye seis juegos creados para PC y recopilados en una sola experiencia. Ya seas un seguidor de toda la vida o descubras al Frijól 117 por primera vez, la colección Jefe Maestro te resultará la experiencia de juego definitiva de Halo. </div>
                         </div>
                     </section>
                 </a>
@@ -59,7 +59,7 @@ session_start();
                     <section class="store-product" style="background-image: url('assets/kopjed.jpeg');">
                         <div class="content">
                             <div class="title"> Kopjed </div>
-                            <div class="description"> Cuphead es un juego de acción clásico estilo "dispara y corre" que se centra en combates contra el jefe. Inspirado en los dibujos animados de los años 30, los aspectos visual y sonoro están diseñados con esmero empleando las mismas técnicas de la época, es decir, animación tradicional a mano, fondos de acuarela y grabaciones originales de jazz. </div>
+                            <div class="description"> Kopjed es un juego de acción clásico estilo "dispara y corre" que se centra en combates contra el jefe. Inspirado en los dibujos animados de los años 30, los aspectos visual y sonoro están diseñados con esmero empleando las mismas técnicas de la época, es decir, animación tradicional a mano, fondos de acuarela y grabaciones originales de jazz. </div>
                         </div>
                     </section>
                 </a>
@@ -67,7 +67,7 @@ session_start();
                     <section class="store-product" style="background-image: url('assets/estardiu_bali.jpeg');">
                         <div class="content">
                             <div class="title"> Estardiu Bali </div>
-                            <div class="description"> Acabas de heredar la vieja parcela agrícola de tu abuelo de Stardew Valley. Decides partir hacia una nueva vida con unas herramientas usadas y algunas monedas. ¿Te ves capaz de vivir de la tierra y convertir estos campos descuidados en un hogar próspero? </div>
+                            <div class="description"> Acabas de heredar la vieja parcela agrícola de tu abuelo de Estardiu Bali. Decides partir hacia una nueva vida con unas herramientas usadas y algunas monedas. ¿Te ves capaz de vivir de la tierra y convertir estos campos descuidados en un hogar próspero? </div>
                         </div>
                     </section>
                 </a>
@@ -83,7 +83,7 @@ session_start();
         </main>
         <script>
             const currentPath = window.location.pathname.split('/').pop();
-            const links = document.querySelectorAll('.nav-links a');
+            const links = document.querySelectorAll('a');
 
             links.forEach(link => {
                 if (link.getAttribute('href') === currentPath) {

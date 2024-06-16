@@ -7,7 +7,7 @@ session_start();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <title> Soporte </title>
+        <title> Cuenta </title>
     </head>
     <body>
         <header>
@@ -30,28 +30,6 @@ session_start();
             </nav>
         </header>
         <main>
-        <header>
-        <h1 src="https://th.bing.com/th/id/OIP.JxkYPsoc6barT0OmtDpALAAAAA?w=269&h=295&rs=1&pid=ImgDetMain">Soporte Técnico</h1><br>
-    </header>
-        <div class="support-thingy">
-               
-  
-
-
-    <section>
-        <h1>Contáctanos</h1><br>
-        <p class="support-sorry">¿Necesitas ayuda? ¡Estamos aquí en casa para asistir cualquier problema!</p><br>
-        <ul>
-            <li><a href="7713533618">Llámanos</a></li><br>
-            <li><a href="mishauwu27@gmail.com">Envíanos un correo</a></li><br>
-        </ul>
-    </section>
-    
-                <p class="support-sorry"> Si está experimentando errores con nuestra página, por favor, espere a que terminemos de hacerla. Gracias. </p>
-            </div>
-            <footer>
-        <p>&copy; 2024 Soporte Técnico</p>
-    </footer>      
         </main>
         <script>
             const currentPath = window.location.pathname.split('/').pop();
@@ -63,7 +41,5 @@ session_start();
                 }
             });
         </script>
-        <body>
-    
     </body>
 </html>
