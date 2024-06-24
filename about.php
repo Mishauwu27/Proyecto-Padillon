@@ -7,12 +7,13 @@ session_start();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="logogo.png">
         <title> Acerca De </title>
     </head>
     <body>
         <header>
             <div class="logo-container">
-                <img src="logo.png" alt="Logo" class="logo">
+                <img src="logogo.png" alt="Logo" class="logo">
                 <h2 class="page-name"> Steam Rojo </h2>
             </div>
             <nav class="nav-links">
@@ -22,7 +23,8 @@ session_start();
             </nav>
             <nav class="nav-links">
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-                    <a href="account.php"> Mi Cuenta </a>
+                    <?php $user_id = $_SESSION['user_id']; ?>
+                    <a href="account.php?id=<?php echo $user_id; ?>"> Mi Cuenta </a>
                     <a href="logout.php"> Cerrar Sesión </a>
                 <?php else: ?>
                     <a href="login.html"> Iniciar Sesión </a>
@@ -33,7 +35,7 @@ session_start();
             <div class="about-intro">
                 <div class="left-side-intro">
                     <div class="logo-container">
-                        <img src="logo.png" alt="Logo" class="about-logo">
+                        <img src="logogo.png" alt="Logo" class="about-logo">
                         <h1 class="about-name"> Steam Rojo </h1>
                     </div>
                     <div class="about-description">

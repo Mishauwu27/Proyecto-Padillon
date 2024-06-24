@@ -1,115 +1,54 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+    header('Location: login.html');
+    exit;
+}
+
+$server = "localhost";
+$username = "root";
+$password = "";
+$database = "steam_rojo";
+
+$conn = new mysqli($server, $username, $password, $database);
+
+$user_id = isset($_GET['id']) ? $_GET['id'] : $_SESSION['user_id'];
+$logged_in_user_id = $_SESSION['user_id'];
+
+if (isset($_GET['id'])) {
+    $viewed_user_id = intval($_GET['id']);
+} else {
+    $viewed_user_id = $user_id;
+}
+
+$user_stmt = $conn->prepare("SELECT username, profile_picture FROM users WHERE id = ?");
+$user_stmt->bind_param("i", $viewed_user_id);
+$user_stmt->execute();
+$user_result = $user_stmt->get_result();
+$user = $user_result->fetch_assoc();
+$username = $user['username'] ?? '';
+
+$games_stmt = $conn->prepare("SELECT products.id, products.title, products.description, products.banner_path, products.image_path FROM owned_games JOIN products ON owned_games.game_id = products.id WHERE owned_games.user_id = ?");
+$games_stmt->bind_param("i", $viewed_user_id);
+$games_stmt->execute();
+$games_result = $games_stmt->get_result();
+
+$conn->close();
 ?>
 
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styleAccountt.css">
+        <link rel="icon" href="logogo.png">
         <title> Cuenta </title>
-        <style>
-/* Reset de estilos básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f0f0f0;
-}
-
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 24px;
-}
-
-main {
-    margin-top: 20px;
-}
-
-.profile {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-}
-
-.profile-info {
-    text-align: center;
-}
-
-.profile-info img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.profile-info h2 {
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.profile-info p {
-    font-size: 16px;
-    color: #666;
-}
-
-.achievements, .games {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.achievements h2, .games h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.achievements ul, .games ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.achievements ul li, .games ul li {
-    font-size: 16px;
-    margin-bottom: 5px;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-        </style>
     </head>
     <body>
         <header>
             <div class="logo-container">
-                <img src="logo.png" alt="Logo" class="logo">
+                <img src="logogo.png" alt="Logo" class="logo">
                 <h2 class="page-name"> Steam Rojo </h2>
             </div>
             <nav class="nav-links">
@@ -119,7 +58,7 @@ footer {
             </nav>
             <nav class="nav-links">
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-                    <a href="account.php"> Mi Cuenta </a>
+                    <a href="account.php?id=<?php echo $user_id; ?>"> Mi Cuenta </a>
                     <a href="logout.php"> Cerrar Sesión </a>
                 <?php else: ?>
                     <a href="login.html"> Iniciar Sesión </a>
@@ -127,6 +66,36 @@ footer {
             </nav>
         </header>
         <main>
+            <div class="account-container">
+            <img src="<?php echo htmlspecialchars($user['profile_picture']); ?>" alt="<?php echo htmlspecialchars($username); ?>" class="profile-picture">
+                <h2><?php echo htmlspecialchars($username); ?></h2>
+                <?php if ($logged_in_user_id == $user_id): ?>
+                    <form action="changeProfilePicture.php" method="post" enctype="multipart/form-data">
+                        <input type="file" name="profile_picture" id="profile_picture" accept="image/*">
+                        <button type="submit">Cambiar Imagen de Perfil</button>
+                    </form>
+                <?php endif; ?>
+            </div>
+            <div class="games-container">
+                <h2>Juegos de <?php echo htmlspecialchars($username); ?></h2>
+                <div class="owned-games">
+                    <?php if ($games_result->num_rows > 0): ?>
+                        <?php while ($game = $games_result->fetch_assoc()): ?>
+                            <div class="game">
+                                <a href="game.php?id=<?php echo htmlspecialchars($game['id']); ?>" class="game-link">
+                                    <div class="game-banner" style='background-image: url("<?php echo htmlspecialchars($game["banner_path"]); ?>");'></div>
+                                    <div class="game-info" style='background-image: url("<?php echo htmlspecialchars($game["image_path"]); ?>");'>
+                                        <div class="game-title"><?php echo htmlspecialchars($game["title"]); ?></div>
+                                        <div class="game-description"><?php echo htmlspecialchars($game["description"]); ?></div>
+                                    </div>
+                                </a>
+                            </div>
+                        <?php endwhile; ?>
+                    <?php else: ?>
+                        <p>Este usuario no tiene juegazos</p>
+                    <?php endif; ?>
+                </div>
+            </div>
         </main>
         <script>
             const currentPath = window.location.pathname.split('/').pop();
@@ -138,45 +107,5 @@ footer {
                 }
             });
         </script>
-
-<header>
-        <div class="container">
-            <h1>Mi Perfil - Steam</h1>
-        </div>
-    </header>
-    <main>
-        <div class="container">
-            <section class="profile">
-                <div class="profile-info">
-                    <img src="profile-picture.jpg" alt="Mi Foto de Perfil">
-                    <h2>Nombre de Usuario</h2>
-                    <p>Correo Electrónico: usuario@ejemplo.com</p>
-                </div>
-                <div class="achievements">
-                    <h2>Mis Logros</h2>
-                    <ul>
-                        <li>Logro 1</li>
-                        <li>Logro 2</li>
-                        <li>Logro 3</li>
-                        <!-- Puedes añadir más logros -->
-                    </ul>
-                </div>
-                <div class="games">
-                    <h2>Mis Juegos</h2>
-                    <ul>
-                        <li>Juego 1</li>
-                        <li>Juego 2</li>
-                        <li>Juego 3</li>
-                        <!-- Puedes añadir más juegos -->
-                    </ul>
-                </div>
-            </section>
-        </div>
-    </main>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Steam. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-</body>
+    </body>
 </html>

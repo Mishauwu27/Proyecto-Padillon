@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #231116;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #1f090f;
+    box-shadow: 0 2px 4px rgba(31, 9, 15, 0.5);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 35px;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-container {
+    align-items: center;
+    display: flex;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.page-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 27px;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: pink;
+}
+
+.nav-links a.active {
+    color: red;
+    text-decoration: underline;
+}
+
+.games-container {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    background-color: #220a11;
+    border-radius: 12px;
+}
+
+.owned-games {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.game {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.game:hover {
+    transform: scale(1.02);
+}
+
+.game-link {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+.game-banner {
+    width: 40%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.game-info {
+    padding: 20px;
+    width: 60%;
+    background-size: cover;
+    background-position: center;
+}
+
+.game-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.game-description {
+    font-size: 16px;
+    color: #eee;
+}
+
+.account-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.account-container h2 {
+    margin: 0;
+}
+
+.account-container form {
+    margin-left: auto;
+}
+
+input[type="file"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

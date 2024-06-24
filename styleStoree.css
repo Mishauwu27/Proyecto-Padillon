@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #231116;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #1f090f;
+    box-shadow: 0 2px 4px rgba(31, 9, 15, 0.5);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 35px;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-container {
+    align-items: center;
+    display: flex;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.page-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 27px;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: pink;
+}
+
+.nav-links a.active {
+    color: red;
+    text-decoration: underline;
+}
+
+.game-container {
+    display: flex;
+    margin-top: 80px;
+    width: 70%;
+    background-color: #1f090f;
+    border-radius: 10px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 65%;
+}
+
+.image {
+    width: 95%;
+    padding: 20px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 35%;
+    padding: 10px;
+}
+
+.info h2 {
+    font-size: 22px;
+}
+
+.info p {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.header {
+    margin-top: 10px;
+    max-height: 30%;
+}
+
+.buy-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    margin-top: 20px;
+    width: 60%;
+    background-color: #1f090f;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.buy-container h3 {
+    font-size: 18px;
+    color: white;
+    margin: 0;
+}
+
+.buy-container p {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+.buy-container a {
+    text-decoration: none;
+    color: white;
+}
+
+.buy-container a:hover {
+    color: pink;
+}
+
+
+.buy-container form {
+    margin: 0;
+}
+
+.buy-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-container button:hover {
+    background-color: darkred;
+}
