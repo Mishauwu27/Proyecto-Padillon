@@ -6,7 +6,7 @@ session_start();
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="adc.css">
         <link rel="icon" href="logogo.png">
         <title> Soporte </title>
     </head>
@@ -17,7 +17,7 @@ session_start();
                 <h2 class="page-name"> Steam Rojo </h2>
             </div>
             <nav class="nav-links">
-                <a href="store.php"> Tienda </a>
+                <a href="index.php"> Tienda </a>
                 <a href="about.php"> Acerca De </a>
                 <a href="support.php"> Soporte </a>
             </nav>
@@ -32,28 +32,32 @@ session_start();
             </nav>
         </header>
         <main>
-        <header>
-        <h1 src="https://th.bing.com/th/id/OIP.JxkYPsoc6barT0OmtDpALAAAAA?w=269&h=295&rs=1&pid=ImgDetMain">Soporte Técnico</h1><br>
-    </header>
-        <div class="support-thingy">
-               
-  
-
-
-    <section>
-        <h1>Contáctanos</h1><br>
-        <p class="support-sorry">¿Necesitas ayuda? ¡Estamos aquí en casa para asistir cualquier problema!</p><br>
-        <ul>
-            <li><a href="7713533618">Llámanos</a></li><br>
-            <li><a href="mishauwu27@gmail.com">Envíanos un correo</a></li><br>
-        </ul>
-    </section>
-    
-                <p class="support-sorry"> Si está experimentando errores con nuestra página, por favor, espere a que terminemos de hacerla. Gracias. </p>
+            <div class="support-thingy">
+                <h2>Soporte de Steam Rojo</h2>
+                <p>En donde no solucionamos nada, pero nos vemos bien intentándolo</p>
             </div>
-            <footer>
-        <p>&copy; 2024 Soporte Técnico</p>
-    </footer>      
+    
+            <h3>FAQs</h3>
+            <div class="support-faq">
+                <h4>¿Qué es Steam Rojo?</h4>
+                <p>Es como Steam, pero rojo. Y un proyecto para una materia también</p>
+            </div>
+            <div class="support-faq">
+                <h4>¿Puedo realmente comprar juegos aquí?</h4>
+                <p>No, pero puedes soñar. ¿Por qué no pruebas en el <a href="https://store.steampowered.com/">sitio</a> de nuestro rival?</p>
+            </div>
+            <div class="support-faq">
+                <h4>¿Cómo puedo obtener soporte de verdad?</h4>
+                <p>Si nos encontramos alguna vez en la vida real, ¡no dudes en preguntar!</p>
+            </div>
+            <div class="support-tips">
+                <h3>Pro Tips Insanos</h3>
+            <ul>
+                <li><strong>Reinicia tu computadora:</strong> No resolverá nada, pero te hará sentir mejor.</li>
+                <li><strong>Ponte a chambear:</strong> Si te dan mucho tiempo para algo, por algo será.</li>
+                <li><strong>No menciones a /b:</strong>...simplemente no lo hagas...</li>
+            </ul>
+            </div>
         </main>
         <script>
             const currentPath = window.location.pathname.split('/').pop();

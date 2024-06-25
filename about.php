@@ -17,7 +17,7 @@ session_start();
                 <h2 class="page-name"> Steam Rojo </h2>
             </div>
             <nav class="nav-links">
-                <a href="store.php"> Tienda </a>
+                <a href="index.php"> Tienda </a>
                 <a href="about.php"> Acerca De </a>
                 <a href="support.php"> Soporte </a>
             </nav>

@@ -5,9 +5,9 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 $server = "localhost";
-$username = "root";
-$password = "";
-$database = "steam_rojo";
+$username = "id22362985_root";
+$password = "communistSteam234_";
+$database = "id22362985_steam_rojo";
 
 $conn = new mysqli($server, $username, $password, $database);
 
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $hashed_password)) {
             $_SESSION['user_id'] = $user_id;
             $_SESSION['logged_in'] = true;
-            header("Location: store.php");
+            header("Location: index.php");
             exit();
         } else {
             echo "Invalid email or password.";

@@ -7,9 +7,9 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 }
 
 $server = "localhost";
-$username = "root";
-$password = "";
-$database = "steam_rojo";
+$username = "id22362985_root";
+$password = "communistSteam234_";
+$database = "id22362985_steam_rojo";
 
 $conn = new mysqli($server, $username, $password, $database);
 

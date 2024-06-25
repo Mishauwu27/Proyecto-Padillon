@@ -12,23 +12,23 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profile_picture']) && isset($_SESSION['user_id'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['background_picture']) && isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
-    $profile_picture = $_FILES['profile_picture'];
+    $background_picture = $_FILES['background_picture'];
     $target_dir = "uploads/";
-    $target_file = $target_dir . basename($profile_picture["name"]);
+    $target_file = $target_dir . basename($background_picture["name"]);
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     
-    $check = getimagesize($profile_picture["tmp_name"]);
+    $check = getimagesize($background_picture["tmp_name"]);
     if ($check !== false) {
         if (file_exists($target_file)) {
             unlink($target_file);
         }
-        if ($profile_picture["size"] > 5000000) {
+        if ($background_picture["size"] > 5000000) {
             echo "Sorry, your file is too large.";
         } else {
             if($imageFileType == "jpg" || $imageFileType == "png" || $imageFileType == "jpeg" || $imageFileType == "gif" ) {
-                if (move_uploaded_file($profile_picture["tmp_name"], $target_file)) {
+                if (move_uploaded_file($background_picture["tmp_name"], $target_file)) {
                     $sql = "UPDATE users SET profile_picture='$target_file' WHERE id=$user_id";
                     if ($conn->query($sql) === TRUE) {
                         header("Location: account.php?id=$user_id");

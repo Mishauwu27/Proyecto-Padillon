@@ -5,6 +5,6 @@ $_SESSION = [];
 
 session_destroy();
 
-header("Location: store.php");
+header("Location: index.php");
 exit();
 ?>

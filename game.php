@@ -2,9 +2,9 @@
 session_start();
 
 $server = "localhost";
-$username = "root";
-$password = "";
-$database = "steam_rojo";
+$username = "id22362985_root";
+$password = "communistSteam234_";
+$database = "id22362985_steam_rojo";
 
 $conn = new mysqli($server, $username, $password, $database);
 
@@ -65,7 +65,7 @@ $conn->close();
             <h2 class="page-name"> Steam Rojo </h2>
         </div>
         <nav class="nav-links">
-            <a href="store.php"> Tienda </a>
+            <a href="index.php"> Tienda </a>
             <a href="about.php"> Acerca De </a>
             <a href="support.php"> Soporte </a>
         </nav>

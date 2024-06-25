@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #231116;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #1f090f;
+    box-shadow: 0 2px 4px rgba(31, 9, 15, 0.5);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 35px;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-container {
+    align-items: center;
+    display: flex;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.page-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 27px;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: pink;
+}
+
+.nav-links a.active {
+    color: red;
+    text-decoration: underline;
+}
+
+.support-thingy, .support-faq, .support-tips {
+    background-color: #1f090f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.support-thingy:hover, .support-faq:hover, .support-tips:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.support-thingy h2, h3, h4 {
+    color: #ff4c4c;
+}
+
+.support-thingy {
+    margin-top: 50px;
+}
+
+.support-tips {
+    margin-top: 30px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: red;
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+li:hover {
+    background-color: darkred;
+}
+
+.active {
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
+.support-faq a {
+    color: pink;
+    text-decoration: none;
+}
+
+.support-faq a:hover {
+    color: red;
+}
